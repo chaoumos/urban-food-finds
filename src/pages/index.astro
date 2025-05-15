@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const siteTitle = "Urban Food Finds: Your Local Foodie Guide";
+const siteDescription = "Discover the hidden culinary gems of your city! Explore local restaurants, street food, and home-cooked meals with honest reviews & photos.";
+---
+
+<Layout title={siteTitle} description={siteDescription}>
+	<section class="hero bg-urban-primary text-white py-16 rounded-lg shadow-md">
+		<div class="container mx-auto text-center">
+			<h1 class="text-4xl font-urban-title font-bold mb-4">{siteTitle}</h1>
+			<p class="text-lg">{siteDescription}</p>
+			<a href="#restaurants" class="inline-block mt-8 bg-urban-secondary hover:bg-urban-accent text-white font-bold py-2 px-4 rounded">Explore Restaurants</a>
+		</div>
+	</section>
+
+	<section id="restaurants" class="py-12">
+		<h2 class="text-3xl font-urban-title font-semibold mb-6 text-center">Featured Restaurants</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="bg-white rounded-lg shadow-md overflow-hidden">
+				<img src="https://placehold.co/600x400.png" alt="Restaurant 1" data-ai-hint="Italian restaurant interior" class="w-full h-48 object-cover" />
+				<div class="p-4">
+					<h3 class="text-xl font-semibold mb-2">Luigi's Pizzeria</h3>
+					<p class="text-gray-700">Authentic Neapolitan pizza in a cozy setting.</p>
+					<a href="#" class="inline-block mt-4 bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-4 rounded">Read Reviews</a>
+				</div>
+			</div>
+
+			<div class="bg-white rounded-lg shadow-md overflow-hidden">
+				<img src="https://placehold.co/600x400.png" alt="Restaurant 2" data-ai-hint="Modern sushi restaurant" class="w-full h-48 object-cover" />
+				<div class="p-4">
+					<h3 class="text-xl font-semibold mb-2">Sushi Zen</h3>
+					<p class="text-gray-700">Fresh and innovative sushi creations.</p>
+					<a href="#" class="inline-block mt-4 bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-4 rounded">Read Reviews</a>
+				</div>
+			</div>
+
+			<div class="bg-white rounded-lg shadow-md overflow-hidden">
+				<img src="https://placehold.co/600x400.png" alt="Restaurant 3" data-ai-hint="Mexican street food stall" class="w-full h-48 object-cover" />
+				<div class="p-4">
+					<h3 class="text-xl font-semibold mb-2">Taco Loco</h3>
+					<p class="text-gray-700">Delicious street tacos and authentic Mexican flavors.</p>
+					<a href="#" class="inline-block mt-4 bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-4 rounded">Read Reviews</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-12 bg-gray-50">
+		<div class="container mx-auto">
+			<h2 class="text-3xl font-urban-title font-semibold mb-6 text-center">Latest Blog Posts</h2>
+			<p class="text-gray-700 text-center">Read about the latest food trends and restaurant reviews in our blog.</p>
+			<div class="text-center mt-4">
+				<a href="/blog" class="inline-block bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-4 rounded">View All Posts</a>
+			</div>
+		</div>
+	</section>
+</Layout>
