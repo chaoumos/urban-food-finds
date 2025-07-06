@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all restaurant entries from the 'restaurants' collection
+const restaurantPosts = await getCollection('restaurants');
+
+const pageTitle = "All Restaurants - Urban Food Finds";
+const pageDescription = "Explore all the culinary delights featured on Urban Food Finds. Find your next favorite restaurant!";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="py-8">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-urban-title font-semibold mb-8 text-center">{pageTitle}</h1>
+
+      {restaurantPosts.length === 0 ? (
+        <p class="text-center text-gray-700">No restaurants listed yet. Check back soon!</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {restaurantPosts.map(post => (
+            <article class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+              {post.data.image && (
+                <a href={`/restaurants/${post.slug}`}>
+                  <img src={post.data.image} alt={`Image of ${post.data.name}`} class="w-full h-48 object-cover"/>
+                </a>
+              )}
+              <div class="p-6 flex flex-col flex-grow">
+                <h2 class="text-2xl font-urban-title font-semibold mb-2">
+                  <a href={`/restaurants/${post.slug}`} class="hover:text-urban-primary">{post.data.name}</a>
+                </h2>
+                <p class="text-gray-600 mb-1"><span class="font-semibold">Cuisine:</span> {post.data.cuisine}</p>
+                <p class="text-gray-600 mb-4"><span class="font-semibold">Location:</span> {post.data.location}</p>
+
+                {/* Optional: Display a short description if available in frontmatter */}
+                {post.data.description && (
+                  <p class="text-gray-700 mb-4 flex-grow">{post.data.description}</p>
+                )}
+
+                <div class="mt-auto">
+                  <a href={`/restaurants/${post.slug}`} class="inline-block bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-4 rounded">
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>
