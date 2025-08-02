@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact Us";
+const pageDescription = "Get in touch with Urban Food Finds. We'd love to hear from you!";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="py-8">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-urban-title font-semibold mb-6">{pageTitle}</h1>
+      <p class="text-lg text-gray-700 mb-4">
+        Have a question, suggestion, or a hot food tip? We'd love to hear from you!
+      </p>
+
+      <form class="mt-8 max-w-lg mx-auto">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+          <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-urban-primary" placeholder="Your Name">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+          <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-urban-primary" placeholder="Your Email">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+          <textarea id="message" name="message" rows="5" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-urban-primary" placeholder="Your Message"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-urban-primary hover:bg-urban-secondary text-white font-bold py-2 px-6 rounded-md">
+            Send Message
+          </button>
+        </div>
+      </form>
+
+      <p class="text-lg text-gray-700 mt-8 text-center">
+        You can also reach us at: <a href="mailto:info@urbanfoodfinds.com" class="text-urban-primary hover:underline">info@urbanfoodfinds.com</a>
+      </p>
+    </div>
+  </section>
+</Layout>

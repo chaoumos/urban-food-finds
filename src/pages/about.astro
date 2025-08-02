@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Urban Food Finds";
+const pageDescription = "Learn more about Urban Food Finds, our mission, and our team.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <section class="py-8">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-urban-title font-semibold mb-6">{pageTitle}</h1>
+      <p class="text-lg text-gray-700 mb-4">
+        Welcome to Urban Food Finds! We are passionate about connecting food lovers with the best local culinary experiences. Our mission is to uncover hidden gems and share authentic food stories from our city.
+      </p>
+      <p class="text-lg text-gray-700 mb-4">
+        Whether you're looking for a quick bite, a fine dining experience, or the best street food, Urban Food Finds is your go-to guide.
+      </p>
+      <h2 class="text-2xl font-urban-title font-semibold mt-8 mb-4">Our Team</h2>
+      <p class="text-lg text-gray-700">
+        We are a group of food enthusiasts, writers, and explorers dedicated to bringing you the most honest and engaging content.
+      </p>
+    </div>
+  </section>
+</Layout>
